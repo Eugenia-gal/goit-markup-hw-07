@@ -30,8 +30,7 @@
 }
 
 .section .paragraph {
-  font-size: 14px;
-  line-height: 1.13;
+  @include font(14px, 700, 26px);
   text-align: left;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -40,8 +39,6 @@
 .section .description {
   color: var(--secondary-text-color);
 
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.74;
+  @include font(14px, 400, 24px);
   letter-spacing: 0.03em;
 }

@@ -16,11 +16,11 @@
   padding-bottom: 32px;
 
   transition: color 250ms var(--time-function);
-}
 
-.page-header .link:hover,
-.page-header .link:focus {
-  color: var(--accent-color);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
 }
 
 .page-header .item + .item {
@@ -32,25 +32,6 @@
   align-items: center;
 }
 
-/* logo */
-.logo {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
-  letter-spacing: 0.03em;
-  text-decoration: none;
-}
-
-.logo span {
-  color: var(--accent-color);
-}
-
-.page-header .logo {
-  margin-right: 93px;
-  color: #000000;
-}
-
 /* site-nav */
 
 .site-nav {
@@ -60,22 +41,22 @@
 
 .site-nav-list .link {
   position: relative;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-}
 
-.site-nav-list .link:after {
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  content: '';
-  width: 100%;
-  height: 4px;
-  background-color: var(--accent-color);
-  border-radius: 2px;
-  opacity: 0;
+  @include font(14px, 500, 16px);
+  letter-spacing: 0.02em;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+    opacity: 0;
+  }
 }
 
 .link.current-page:after {
@@ -94,18 +75,16 @@
 
   color: var(--secondary-text-color);
 
+  @include font(14px, 500, 16px);
   font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
   letter-spacing: 0.02em;
 
   transition: color 250ms var(--time-function);
-}
 
-.page-header .address .link:hover,
-.page-header .address .link:focus {
-  color: var(--accent-color);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
 }
 
 .address .icon {

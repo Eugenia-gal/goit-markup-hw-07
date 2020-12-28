@@ -36,11 +36,11 @@
   border-radius: 4px;
 
   transition: transform 250ms var(--time-function) 250ms;
-}
 
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) rotateY(-90deg);
-  transition: transform 250ms var(--time-function);
+  .backdrop.is-hidden & {
+    transform: translate(-50%, -50%) rotateY(-90deg);
+    transition: transform 250ms var(--time-function);
+  }
 }
 
 .modal-btn {
@@ -63,13 +63,12 @@
 
 .btn-icon {
   fill: #000000;
-
   transition: fill 250ms var(--time-function);
-}
 
-.modal-btn:hover .btn-icon,
-.modal-btn:focus .btn-icon {
-  fill: var(--accent-color);
+  .modal-btn:hover &,
+  .modal-btn:focus & {
+    fill: var(--accent-color);
+  }
 }
 
 .modal-form {
@@ -95,10 +94,6 @@
   color: var(--secondary-text-color);
 }
 
-.form-field:focus-within .field-icon {
-  fill: var(--accent-color);
-}
-
 .field-input-wrapper {
   display: block;
   position: relative;
@@ -114,11 +109,11 @@
   padding: 0 0 0 42px;
 
   transition: border 250ms var(--time-function);
-}
 
-.field-input:focus {
-  border-color: var(--accent-color);
-  outline: none;
+  &:focus {
+    border-color: var(--accent-color);
+    outline: none;
+  }
 }
 
 .field-icon {
@@ -129,6 +124,10 @@
   fill: currentColor;
 
   transition: fill 250ms var(--time-function);
+
+  .form-field:focus-within & {
+    fill: var(--accent-color);
+  }
 }
 
 .field-txtarea {
@@ -141,33 +140,15 @@
   resize: none;
 
   transition: border 250ms var(--time-function);
-}
 
-.field-txtarea::placeholder {
-  color: rgba(117, 117, 117, 0.5);
-}
+  &::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+  }
 
-.field-txtarea:focus {
-  border-color: var(--accent-color);
-  outline: none;
-}
-
-.policy-chbx-text::before {
-  content: '';
-  display: inline-block;
-  margin-right: 9px;
-  width: 16px;
-  height: 15px;
-  border: 2px solid var(--primary-text-color);
-  border-radius: 2px;
-}
-
-.policy-input:checked + .policy-chbx-text::before {
-  background-image: url(../images/chbx-on.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border: none;
+  &:focus {
+    border-color: var(--accent-color);
+    outline: none;
+  }
 }
 
 .policy-chbx-text {
@@ -182,6 +163,24 @@
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--secondary-text-color);
+
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-right: 9px;
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--primary-text-color);
+    border-radius: 2px;
+
+    .policy-input:checked + & {
+      background-image: url(../images/chbx-on.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border: none;
+    }
+  }
 }
 
 .policy-agreement {
@@ -206,8 +205,10 @@
   border-radius: 4px;
 
   cursor: pointer;
-}
 
-.form-submit-btn:hover {
-  background-color: #188ce8;
+  transition: background-color 250ms var(--time-function);
+
+  &:hover {
+    background-color: #188ce8;
+  }
 }

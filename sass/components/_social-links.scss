@@ -19,12 +19,12 @@
 
   transition: color 250ms var(--time-function),
     background-color 250ms var(--time-function);
-}
 
-.social-links .link:hover,
-.social-links .link:focus {
-  background-color: var(--accent-color);
-  color: var(--primary-white-color);
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color);
+    color: var(--primary-white-color);
+  }
 }
 
 .social-links .icon {
